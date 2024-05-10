@@ -17,7 +17,7 @@ DynamicLayout::DynamicLayout(QWidget *parent)
     auto *page = new DynamicPage(this);
     connect(page, &DynamicPage::nameChanged, this, &DynamicLayout::renamePage);
     m_tabLayout->addTab(page, "");
-    page->setName(tr("布局#%1").arg(m_index++));
+    page->setName(tr("layout#%1").arg(m_index++));
     addCloseButton(0);
 
     auto *layout = new QHBoxLayout(this);
@@ -40,7 +40,7 @@ void DynamicLayout::pageChanged(int index) {
         m_tabLayout->addTab(newPage, "");
         newPage->setName("+");
 
-        const auto pageName = tr("布局#%1").arg(m_index++);
+        const auto pageName = tr("layout#%1").arg(m_index++);
         auto      *page     = dynamic_cast<DynamicPage *>(m_tabLayout->widget(index));
         if (nullptr != page) {
             page->setName(pageName);
@@ -114,7 +114,7 @@ void DynamicLayout::renamePage(const QString &name) {
 
 void DynamicLayout::addCloseButton(int index) {
     auto *closeButton = new QPushButton(this);
-    closeButton->setToolTip(tr("关闭布局"));
+    closeButton->setToolTip(tr("close layout"));
     closeButton->setIcon(style()->standardIcon(QStyle::SP_TitleBarCloseButton));
     closeButton->setFlat(true);
     closeButton->setFixedWidth(16);

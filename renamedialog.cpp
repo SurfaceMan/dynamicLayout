@@ -13,7 +13,7 @@ RenameDialog::RenameDialog(QWidget *parent, Qt::WindowFlags flag)
     layout->setSpacing(15);
     layout->setContentsMargins(0, 0, 0, 0);
 
-    auto *label = new QLabel(tr("名字:"), this);
+    auto *label = new QLabel(tr("Name:"), this);
     m_editor    = new QLineEdit(this);
     auto *button =
         new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, this);

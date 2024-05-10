@@ -32,12 +32,12 @@ DynamicPage::DynamicPage(QWidget *parent)
     m_closeAction = m_toolBar->addAction(QChar(IconFont::CLOSE), this, &DynamicPage::closeWindow);
     m_separator->setVisible(false);
 
-    m_horizontalSplitAction->setToolTip(tr("水平分割"));
-    m_verticalSplitAction->setToolTip(tr("垂直分割"));
-    m_fullScreenAction->setToolTip(tr("全屏"));
-    m_resetScreenAction->setToolTip(tr("恢复"));
+    m_horizontalSplitAction->setToolTip(tr("horizontal split"));
+    m_verticalSplitAction->setToolTip(tr("vertical split"));
+    m_fullScreenAction->setToolTip(tr("full screen"));
+    m_resetScreenAction->setToolTip(tr("reset screen"));
     m_resetScreenAction->setVisible(false);
-    m_closeAction->setToolTip(tr("关闭"));
+    m_closeAction->setToolTip(tr("close"));
 
     auto *layout = new QHBoxLayout(this);
     layout->setSpacing(0);
@@ -225,7 +225,7 @@ void DynamicPage::createWindow(const QString &typeName) {
         return;
     }
 
-    const auto windowName = tr("窗口#%1").arg(m_index++);
+    const auto windowName = tr("window#%1").arg(m_index++);
     window->setName(windowName);
 
     auto *parentWidget = widget->parentWidget();
@@ -279,7 +279,7 @@ QWidget *DynamicPage::initCreatorWindow(QWidget *parent) {
 }
 
 void DynamicPage::renamePage() {
-    auto pageName = RenameDialog::getName(tr("修改名字..."), this);
+    auto pageName = RenameDialog::getName(tr("Edit name..."), this);
     if (pageName.isEmpty()) {
         return;
     }

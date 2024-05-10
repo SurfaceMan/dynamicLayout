@@ -46,7 +46,7 @@ void DynamicWindow::focusOutEvent(QFocusEvent *event) {
 }
 
 void DynamicWindow::renameWindow() {
-    auto windowName = RenameDialog::getName(tr("修改名字..."), this);
+    auto windowName = RenameDialog::getName(tr("Edit name..."), this);
     if (windowName.isEmpty()) {
         return;
     }
